@@ -1,0 +1,189 @@
+/* todo 加入Google font Roboto分別載入字重100,400,700 */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700');
+
+/*------ note general ------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url('../img/cork-repeat.jpg');
+    min-height: 1000px;
+}
+
+.card-wrapper {
+    perspective: 1000px;
+}
+
+.card {
+    width: 600px;
+    margin: 100px auto;
+}
+
+.card>.upper-section,
+.card>.lower-section {
+    padding: 20px 20px;
+    position: relative;
+}
+
+
+/*------ note fonts ------*/
+
+* {
+    color: #333;
+}
+
+.dish-name {
+    font-size: 50px;
+    letter-spacing: 8px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+
+/*------ note upper-section ------*/
+
+.upper-section {
+    background-color: white;
+    height: 220px;
+    z-index: 5;
+    color: white;
+    background-image: url('../img/salmon-steak.jpg');
+    background-size: cover;
+    filter: brightness(1.1) grayscale(10%);
+    transform: rotatex(25deg);
+    transform-origin: bottom;
+    /* todo 設定filter屬性控制照片明亮與飽和度 */
+}
+
+.upper-section .text {
+    margin-top: 80px;
+}
+
+.upper-section * {
+    color: white;
+}
+
+.upper-section p {
+    margin: 0;
+}
+
+.price {
+    margin-top: 15px;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 100;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+}
+
+.price:before {
+    content: "$";
+    margin-right: 5px;
+}
+
+.price:after {
+    content: "NTD";
+    margin-left: 5px;
+}
+
+
+/*------ note lower-section ------*/
+
+.lower-section {
+    background-color: white;
+    z-index: 1;
+    transform: rotatex(-100deg);
+    transform-origin: top;
+}
+
+.ingredients {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ingredients>li {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    padding-left: 50px;
+    border-bottom: 1px dashed #dbdbdb;
+    position: relative;
+    cursor: pointer;
+    /* 利用偽元素設計checklist點擊圖樣 */
+}
+
+.ingredients>li:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid #dbdbdb;
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    bottom: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 5px;
+}
+
+.ingredients>li.done {
+    text-decoration: line-through;
+}
+
+.ingredients>li.done:before {
+    background-image: url('../img/checked.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+
+/*------ note animation ------*/
+
+.upper-section,
+.lower-section,
+.price {
+    transition: all .5s ease;
+}
+
+.card:hover>.upper-section,
+.card:hover>.lower-section {
+    transform: rotateX(0deg);
+    filter: brigtness(1) grayscale(0%);
+}
+
+.card:hover .price {
+    opacity: 1;
+}
+
+
+/* todo 設計.card:hover動畫 */
+
+
+/* todo 設計.card:hover的3D動畫 */
+
+
+/* note circle */
+
+
+/* todo 設計底圖擴散圓圈特效動畫 */
